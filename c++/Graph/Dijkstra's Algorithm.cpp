@@ -1,7 +1,8 @@
-Algoritmo que dado un grafo con pesos no negativos halla la ruta mínima entre un nodo inicial s y todos los demás nodos.
-SE DEBEN LIMPIAR LAS ESTRUCTURAS DE DATOS ANTES DE UTILIZARSE
+#include <bits/stdc++.h>
+using namespace std;
 
 #define Node pair<int,long long> //(Vertice adyacente, peso)
+#define INF 1000000000
 
 int v,e; //v = cantidad de nodos, e = cantidad de aristas
 const int MAX = 100001; //Cantidad Máxima de Nodos
@@ -16,6 +17,16 @@ public:
     return (n1.second>n2.second);
   }   
 };
+
+void init() {
+    long long max = LLONG_MAX;
+
+    for( int j = 0; j <= v; j++ ) {
+        dist[j] = max; //Distancia a cada nodo (Dijkstra)
+        marked[j] = 0; //Estructura auxiliar para marcar los nodos ya visitados
+        previous[j] = -1;  //Estructura auxiliar para almacenar las rutas
+    }
+}
 
 //El método debe llamarse con el indice del nodo inicial.
 void dijkstra( int s ){
@@ -44,7 +55,6 @@ void dijkstra( int s ){
         }
       }
     }
-
 }
 
 int main(){
