@@ -15,7 +15,7 @@ void init(){
 }
 
 int main() {
-	  int origen, destino;
+    int origen, destino;
     
     //Al iniciar cada caso de prueba
     cin>>v>>e;
@@ -32,12 +32,12 @@ int main() {
     
     //Imprime la matriz de adyacencia
     for(int i=0;i<v;i++){
-		  cout<<i<<"\n";
-		  for(int j=0;j<v;j++){
-			  cout<<ady[i][j]<<" ";
-		  }
-			cout<<"\n";
-	  }
+	cout<<i<<"\n";
+	for(int j=0;j<v;j++){
+		cout<<ady[i][j]<<" ";
+	}
+	cout<<"\n";
+    }
 	
-	return 0;
+    return 0;
 }
