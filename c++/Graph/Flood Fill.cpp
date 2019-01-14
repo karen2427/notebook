@@ -1,12 +1,25 @@
 Dado un grafo implicito colorea y cuenta el tamaño de las componentes conexas. Normalmente usado en rejillas 2D.
 
-//aka Coloring the connected components
+#include <bits/stdc++.h>
+using namespace std;
 
+
+#define INF 1000000000
+
+int v, e; //v = cantidad de nodos, e = cantidad de aristas
 const int tam = 1000; //Máximo tamaño de la rejilla
 int dy[] = {1,1,0,-1,-1,-1, 0, 1}; //Estructura auxiliar para los desplazamientos (8 direcciones)
 int dx[] = {0,1,1, 1, 0,-1,-1,-1}; //Estructura auxiliar para los desplazamientos (8 direcciones)
 char grid[tam][tam]; //Matriz de caracteres
 int X, Y; //Tamaño de la matriz
+const int MAX=1000; //Cantidad Máxima de Nodos
+int ady[MAX][MAX];
+
+void init() {
+    for( int j = 0; j <= v; j++ ) {
+        for(int k = 0; k < v; k++)  ady[j][k] = INF; //Warshall
+    }
+}
 
 /*Este método debe ser llamado con las coordenadas x, y donde se inicia el 
 recorrido. c1 es el color que estoy buscando, c2 el color con el que se va 
